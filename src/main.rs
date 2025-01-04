@@ -18,7 +18,7 @@ struct Args {
     error_rate: u8,
 
     #[arg(short, long, required = true)] // 必須の引数: ポート番号
-    port: u16, // ポートを単一の値に変更
+    port: u16,
 
     #[arg(short, long)] // レスポンスデータjsonファイルのパス
     data_file: Option<String>,
