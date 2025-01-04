@@ -72,7 +72,7 @@ async fn main() {
 
 async fn random_response(Path(path): Path<String>, error_rate: Arc<u8>, items: Vec<Item>) -> impl IntoResponse {
     let mut rng = rand::thread_rng();
-    let chance: u8 = rand::random();
+    let chance: u8 = rand::random::<u8>() % 101;  // 0から100までの値に制限
 
     if chance < *error_rate {
         (
